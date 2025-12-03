@@ -1,4 +1,4 @@
-package com.example.mydb.repl;
+package com.mpdb.repl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -41,15 +41,13 @@ public class SqlQueryProcessor implements Processor {
             String queryType = result.getSqlKind();
             String formattedAst = formatAst(result.getAstString());
 
-            log.debug("Query Type: {}", queryType);
-            log.debug("AST:\n{}", formattedAst);
-
-            response.append("Query Type: ").append(queryType).append("\n");
-            response.append("\nAST:\n").append(formattedAst).append("\n");
-            response.append("\n⚠️  Note: Query execution is not yet implemented.");
+            log.debug("\nQuery Type: {}\nAST:\n{}", queryType, formattedAst);
+//            response.append("Query Type11111 ").append(queryType).append("\n");
+//            response.append("\nAST:\n").append(formattedAst).append("\n");
+//            response.append("\n⚠️  Note: Query execution is not yet implemented.");
         }
 
-        return response.toString();
+        return "\n⚠️  Note: Query execution is not yet implemented.";
     }
 
     /**
