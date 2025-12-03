@@ -33,11 +33,13 @@ public class SqlQueryProcessor implements Processor {
         if (!result.isValid()) {
             return "❌ SQL Parse Error:\n" + result.errorMessage();
         }
+
         if (dbState.isDebugAstMode()) {
             String queryType = result.getSqlKind();
             String formattedAst = formatAst(result.getAstString());
-            log.debug("\nQuery Type: {}\nAST:\n{}", queryType, formattedAst);
+            System.out.printf("\nQuery Type: %s\nAST:\n%s\n", queryType, formattedAst);
         }
+
         return "\n⚠️  Note: Query execution is not yet implemented.";
     }
 

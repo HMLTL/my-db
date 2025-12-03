@@ -2,7 +2,7 @@ spring:
   application:
     name: mp-db
   main:
-    banner-mode: off
+    banner-mode: console
 
 logging:
   level:
@@ -10,3 +10,6 @@ logging:
     com.mpdb: INFO
     com.mpdb.repl: DEBUG
 
+# REPL configuration
+app:
+  prompt: "mp-db> "
